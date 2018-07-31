@@ -109,7 +109,7 @@ public class S3SinkTask extends SinkTask {
 			log.info("records to put:");
 			for (SinkRecord record: records)
 			{
-				log.info("topic :"+record.topic()+  " value:" + record.value()+ "  " );
+				log.info("topic :"+record.topic()+  " value:" + record.value()+ "  " + record.key());
 			}
 
 			PartitionWriter writer = partitions.computeIfAbsent(tp,
